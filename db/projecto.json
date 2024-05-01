@@ -54,13 +54,5 @@
         "github":"https://github.com/arturtembe/movie-html-css-javascript",
         "live":"https://arturtembe.github.io/movie-html-css-javascript/",
         "image":"./image/20042024072447.png"
-    },
-    {
-        "id":"20042024072440",
-        "titulo":"My Portfolio",
-        "tecnologia":"HTML, CSS e JAVASCRIPT",
-        "github":"https://github.com/arturtembe/portfolio",
-        "live":"",
-        "image":"./image/20042024072440.png"
     }
 ]
