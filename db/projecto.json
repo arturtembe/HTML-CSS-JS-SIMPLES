@@ -1,0 +1,66 @@
+[
+    {
+        "id":"20042024072441",
+        "titulo":"Calculador IMC",
+        "tecnologia":"NEXT, TAILWIND e PHP",
+        "github":"https://github.com/arturtembe/calculate-imc-nextjs-tailwind",
+        "live":"https://imc-plus-next.vercel.app/",
+        "image":"./image/20042024072441.png"
+    },
+    {
+        "id":"20042024072442",
+        "titulo":"Shoopee",
+        "tecnologia":"Angular, SCSS e PHP",
+        "github":"https://github.com/arturtembe/shoopee-dashboard-angular",
+        "live":"https://shoopee-dashboard.vercel.app/",
+        "image":"./image/20042024072442.png"
+    },
+    {
+        "id":"20042024072443",
+        "titulo":"DashStudents",
+        "tecnologia":"Vue, CSS e PHP",
+        "github":"https://github.com/arturtembe/dashStudents-vue",
+        "live":"https://dashstudent-vue-css.vercel.app/",
+        "image":"./image/20042024072443.png"
+    },
+    {
+        "id":"20042024072444",
+        "titulo":"Blog Simples",
+        "tecnologia":"NODE, BOOTSTRAP e MONGODB",
+        "github":"https://github.com/arturtembe/nodejs-express-handlebars",
+        "live":"",
+        "image":"./image/20042024072444.png"
+    },
+    {
+        "id":"20042024072445",
+        "titulo":"Sistema de venda",
+        "tecnologia":"LARAVEL, MATERALIZE e MYSQL",
+        "github":"https://github.com/arturtembe/dashboard-laravel-mysql",
+        "live":"",
+        "image":"./image/20042024072445.png"
+    },
+    {
+        "id":"20042024072446",
+        "titulo":"Login and register transparent",
+        "tecnologia":"HTML, CSS e JAVASCRIPT",
+        "github":"https://github.com/arturtembe/login_register_main_sytem_css_html_js",
+        "live":"https://arturtembe.github.io/login_register_main_sytem_css_html_js/",
+        "image":"./image/20042024072446.png"
+    },
+    {
+        "id":"20042024072447",
+        "titulo":"Movie Store",
+        "tecnologia":"HTML, CSS e JAVASCRIPT",
+        "github":"https://github.com/arturtembe/movie-html-css-javascript",
+        "live":"https://arturtembe.github.io/movie-html-css-javascript/",
+        "image":"./image/20042024072447.png"
+    },
+    {
+        "id":"20042024072440",
+        "titulo":"My Portfolio",
+        "tecnologia":"HTML, CSS e JAVASCRIPT",
+        "github":"http://",
+        "live":"",
+        "image":"./image/20042024072440.png"
+    }
+]
