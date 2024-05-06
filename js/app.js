@@ -1,6 +1,8 @@
 
 //import "../styles/scss/style.scss";
 
+document.getElementById("basFooter").innerHTML=`Copyright © <span>Artur Jaime Tembe</span> - All rights reserved`;
+
 let toggle=document.querySelector('.toggle-ball');
 let inicio=document.querySelector('inicio');
 
@@ -203,51 +205,72 @@ async function getAllProject(){
 
     await data.forEach(el=>{
         
-        let item=document.createElement('div');
-        item.setAttribute("class","item-projectos");
-
-            let img=document.createElement("img");
-            img.setAttribute("src","");
-            img.setAttribute("data-url",`${el.image}`);
-            img.setAttribute("alt",`${el.titulo}`);
-            //img.setAttribute("class",'src-img');
-            
-            img.addEventListener("load",e=>{
-                e.target.classList.add("loaded");
-            }); 
-            
-            let itemTitle=document.createElement('div');
-            itemTitle.setAttribute("class","item-title");
-
-                let h4=document.createElement("h4");
-                h4.setAttribute("title",`${el.titulo}`);
-                h4.innerHTML=el.titulo;
-                let h5=document.createElement("h5");
-                h5.setAttribute("title",`${el.tecnologia}`);
-                h5.innerHTML=el.tecnologia;
-                let controlItem=document.createElement("div");
-                controlItem.setAttribute("class","control-item");
-                    let github=document.createElement("a");
-                    github.setAttribute("href",el.github);
-                    github.innerHTML="GitHub"
-                    
-                    let live=document.createElement("a");
-                    live.setAttribute("href",el.live);
-                    live.innerHTML="Live";
-                
-                controlItem.appendChild(github);
-                el.live!=""&& (controlItem.appendChild(live));
-
-            itemTitle.appendChild(h4);
-            itemTitle.appendChild(h5);
-            itemTitle.appendChild(controlItem);
-
-        item.appendChild(img);
-        item.appendChild(itemTitle);
-
-        proj.appendChild(item);
-
+        // New Project
+        creatNewProject(el);
     });
+}
+
+function creatNewProject(el){
+    
+    let article=document.createElement('article');
+    article.setAttribute("class","card__article swiper-slide");
+
+        let card__image=document.createElement("div");
+        card__image.setAttribute("class","card__image");
+            
+            let card__img=document.createElement("img");
+            card__img.setAttribute("class","card__img");
+            card__img.setAttribute("src",`${el.image}`);
+            //card__img.setAttribute("data-url",`${el.image}`);
+            card__img.setAttribute("alt",`${el.titulo}`);
+            /*
+            card__img.addEventListener("load",e=>{
+                e.target.classList.add("loaded");
+            }); */
+        
+            let card__shadow=document.createElement("div");
+            card__shadow.setAttribute("class","card__shadow");
+
+        // append
+        card__image.appendChild(card__img);
+        card__image.appendChild(card__shadow);
+
+        let card__data=document.createElement("div");
+        card__data.setAttribute("class","card__data");
+            
+            let card__name=document.createElement("h3");
+            card__name.setAttribute("class","card__name");
+            card__name.innerHTML=`${el.titulo}`;
+
+            let card__description=document.createElement("p");
+            card__description.setAttribute("class","card__description");
+            card__description.innerHTML=`${el.tecnologia}`;
+
+            let card__button=document.createElement("p");
+            card__button.setAttribute("class","card__button");
+            
+                let github=document.createElement("a");
+                github.setAttribute("href",`${el.github}`);
+                github.innerHTML=`GitHub`;
+
+                let live=document.createElement("a");
+                live.setAttribute("href",`${el.live}`);
+                live.innerHTML=`Live`;
+
+            //append
+            card__button.appendChild(github);
+            card__button.appendChild(live);
+
+        // append
+        card__data.appendChild(card__name);
+        card__data.appendChild(card__description);
+        card__data.appendChild(card__button);
+
+    //append
+    article.appendChild(card__image);
+    article.appendChild(card__data);
+
+    document.getElementById("swiper-wrapper").append(article);
 }
 
 window.addEventListener("load",inicia);
@@ -255,16 +278,59 @@ window.addEventListener("load",inicia);
 //IMG
 window.addEventListener("scroll",(e)=>{
 
-    let item=[...document.getElementsByClassName("item-projectos")]
+    let item=[...document.getElementsByClassName("card__img")]
     
-    if(window.scrollY>=720){
+    if(window.scrollY>=1197){
         
         item.forEach(el=>{
-            if(el.children[0].getAttribute("src")==null || 
-            el.children[0].getAttribute("src")==""){
-                el.children[0].setAttribute("src",el.children[0].getAttribute("data-url"));
-                el.children[0].setAttribute("data-url","");
+            //console.log(el.getAttribute("data-url"));
+            
+            if(el.getAttribute("src")==null || 
+            el.getAttribute("src")==""){
+                el.setAttribute("src",el.getAttribute("data-url"));
+                el.setAttribute("data-url","");
             }
+            
         })
     }
 });
+
+/* ----- ## -- SCROLL REVEAL ANIMATION -- ## ----- */
+const sleft = ScrollReveal({
+    origin: 'left',
+    distance: '80px',
+    duration: 2000,
+    reset: true     
+})
+
+/* -- HOME -- */
+sleft.reveal('.home-content',{delay: 100});
+sleft.reveal('.box-title',{});
+sleft.reveal('.title-projecto',{delay:300});
+sleft.reveal('.findme',{delay:300});
+sleft.reveal('.logo',{delay:300});
+
+const srigth = ScrollReveal({
+    origin: 'rigth',
+    distance: '80px',
+    duration: 2000,
+    reset: true     
+})
+
+/* -- HOME -- */
+srigth.reveal('.buttons-controls',{delay: 300});
+srigth.reveal('.form',{delay: 300});
+srigth.reveal('.toggle',{delay: 300});
+
+const stop = ScrollReveal({
+    origin: 'top',
+    distance: '80px',
+    duration: 2000,
+    reset: true     
+})
+// 
+stop.reveal('.icon-menu',{delay:300});
+stop.reveal('.habilidade-show',{delay:200});
+stop.reveal('.swiper-wrapper',{delay:300});
+stop.reveal('.basFooter',{delay:300});
+stop.reveal('.top',{delay: 300});

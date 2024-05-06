@@ -192,28 +192,6 @@ html::-webkit-scrollbar-track{
   color: #00abf0;
 }
 
-.home-content h1::before,
-.home-content h3::before,
-.home-content p::before{
-  content: "";
-  position: absolute;
-  top: 0;
-  right: 0;
-  width: 100%;
-  height: 100%;
-  background: #081b29;
-  -webkit-animation: showRight 3s ease forwards;
-  -o-animation: showRight 3s ease forwards;
-  -moz-animation: showRight 3s ease forwards;
-  -ms-animation: showRight 3s ease forwards;
-  animation: showRight 3s ease forwards;
-  -webkit-animation-delay: 0.1 0.6s;
-  -o-animation-delay: 0.1 0.6s;
-  -moz-animation-delay: 0.1 0.6s;
-  -ms-animation-delay: 0.1 0.6s;
-  animation-delay: 0.1 0.6s;
-}
-
 .home-content .btn-box {
   display: flex;
   justify-content: space-between;
@@ -227,7 +205,7 @@ html::-webkit-scrollbar-track{
   display: inline-flex;
   justify-content: center;
   align-items: center;
-  width: 150px;
+  width: 100px;
   height: 100%;
   background: #00abf0;
   border: 2px solid #00abf0;
@@ -585,23 +563,65 @@ html::-webkit-scrollbar-track{
   padding: 1% 0;
   background-color: #081b29;
 }
+.contacto h1 {
+  width: 95%;
+  text-align: center;
+  font-size: 52px;
+  padding: 20px 0;
+  color: #fff;
+  border-left: 15px solid #fff;
+  border-bottom: 1px solid #fff;
+  border-right: 1px solid #fff;
+  box-shadow: 4px 4px 4px 4px #081b29;
+  margin: 0 2%;
+}
 .contacto .box-form {
   height: 100%;
   display: flex;
   justify-content: center;
   align-items: flex-start;
+  flex-wrap: wrap;
   margin-bottom: 20px;
+}
+.contacto .box-form .findme {
+  width: 30%;
+  box-shadow: 4px 4px 3px 4px #020e1a;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  padding: 100px 0;
+  margin-top: 50px;
+  overflow-y: hidden;
+  margin: 50px 5px 0 5px;
+
+  & h4{
+    color: #fff;
+    text-align: center;
+    font-size: 1.5rem;
+    width: 100%;
+    padding: 20px 0;
+    word-wrap: break-word;
+  }
+  & p{
+    text-align: center;
+    padding: 10px 20px;
+    color: #fff;
+    width: 100%;
+    word-wrap: break-word;
+  }
 }
 .contacto .box-form .form {
   background-color: #081b29;
-  padding: 25px;
-  width: 60%;
-  margin-top: 1%;
+  padding: 10px 25px;
+  width: 50%;
   box-shadow: 4px 4px 3px 4px #020e1a;
   border-radius: 10px;
+  margin: 50px 5px 0 5px;
 }
 .contacto .box-form .form .box-input-form {
-  padding: 10px;
+  padding: 0 10px 10px 10px;
   width: 100%;
   position: relative;
 }
@@ -617,7 +637,7 @@ html::-webkit-scrollbar-track{
 }
 .contacto .box-form .form .box-input-form .msg {
   display: block;
-  padding: 15px 10px;
+  padding: 0 10px 15px 10px;
   font-size: 17px;
   color: #fff;
   border-radius: 15px;
@@ -909,6 +929,23 @@ html::-webkit-scrollbar-track{
 .contacto.active {
   background-color: #fff;
 }
+.contacto.active h1{
+  color: #00abf0;
+  border-left: 15px solid #00abf0;
+  border-bottom: 1px solid #00abf0;
+  border-right: 1px solid #00abf0;
+  box-shadow: 4px 4px 4px 4px #ddd;
+}
+.contacto.active .box-form .findme {
+  box-shadow: 4px 4px 4px 4px #ddd;
+
+  & h4{
+    color: #020e1a;
+  }
+  & p{
+    color: #020e1a;
+  }
+}
 .contacto.active .box-form .form {
   background-color: #fff;
   box-shadow: 4px 4px 3px 4px #ddd;
@@ -960,6 +997,9 @@ html.active::-webkit-scrollbar-track{
 @media screen and (max-width: 900px) {
   .contacto .box-form {
     padding: 25px;
+  }
+  .contacto .box-form .findme {
+    width: 100%;
   }
   .contacto .box-form .form {
     width: 100%;

@@ -1,0 +1,413 @@
+/*=============== GOOGLE FONTS ===============*/
+@import url("https://fonts.googleapis.com/css2?family=Bai+Jamjuree:wght@400;500;600&display=swap");
+
+/*=============== VARIABLES CSS ===============*/
+:root {
+  /*========== Colors ==========*/
+  /*Color mode HSL(hue, saturation, lightness)*/
+  --first-color: #081b29;
+  --first-color-light: hsl(38, 100%, 78%);
+  --first-color-alt: hsl(32, 75%, 50%);
+  --second-color: hsl(195, 75%, 52%);
+  --dark-color: hsl(212, 40%, 12%);
+  --white-color: hsl(212, 4%, 95%);
+  --body-color: hsl(212, 42%, 15%);
+  --container-color: #081b29;
+
+  /*========== Font and typography ==========*/
+  /*.5rem = 8px | 1rem = 16px ...*/
+  --body-font: "Bai Jamjuree", sans-serif;
+  --h2-font-size: 1.25rem;
+  --normal-font-size: 1rem;
+}
+
+/*=============== BASE ===============*/
+
+a {
+  text-decoration: none;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+/*=============== CARD ===============*/
+.projecto{
+
+  & .header-projectos{
+    width: 95%;
+    padding: 15px;
+    border-left: 15px solid #fff;
+    border-bottom: 1px solid #fff;
+    border-right: 1px solid #fff;
+    box-shadow: 4px 4px 4px 4px #081b29;
+    margin: 0 2%;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    align-items: center;
+
+    & .title-projecto{
+      padding: 5px;
+      text-align: start;
+      font-size: 52px;
+      color: #fff;  
+    }
+
+    & .buttons-controls{
+      display: flex;
+
+      & svg.button-next{
+        width: 50px;
+        height: 50px;
+        
+        & path{
+          fill: #fff;
+        }
+        &:hover{
+          cursor: pointer;
+        }
+      }
+      & svg.button-prev{
+        width: 50px;
+        height: 50px;
+
+        & path{
+          fill: #fff;
+        }
+
+        &:hover{
+          cursor: pointer;
+        }
+        
+      }
+    }
+  }
+  
+  & .container-box-cards {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+
+    & .card__container {
+      padding-block: 5rem;
+
+      & .card__content {
+        margin-inline: 1.75rem;
+        border-radius: 1.25rem;
+        overflow: hidden;
+        padding: 2% 0;
+
+        & .swiper-wrapper{
+
+          & .card__article {
+            width: 300px;
+            height: 500px; /* Remove after adding swiper js */
+            border-radius: 1.25rem;
+            overflow: hidden;
+            box-shadow: 4px 4px 3px 4px #020e1a;
+          
+            & .card__image {
+              position: relative;
+              background-color: var(--first-color-light);
+              padding-top: 0;
+              margin-bottom: -.75rem;
+              height: 300px;
+              
+              & .card__img {
+                width: 100%;
+                height: 100%;
+                margin: 0 auto;
+                position: relative;
+                z-index: 5;
+              }
+
+              & .card__img.loaded {
+                opacity: 1;
+                -webkit-transition: opacity 3s;
+                -o-transition: opacity 3s;
+                -moz-transition: opacity 3s;
+                transition: opacity 3s;
+              }
+              
+              & .card__shadow {
+                width: 200px;
+                height: 200px;
+                background-color: var(--first-color-alt);
+                border-radius: 50%;
+                position: absolute;
+                top: 3.75rem;
+                left: 0;
+                right: 0;
+                margin-inline: auto;
+                filter: blur(45px);
+              }
+
+            }
+            
+            & .card__data {
+              background-color: var(--container-color);
+              padding: 1.5rem 2rem;
+              border-radius: 1rem;
+              text-align: center;
+              position: relative;
+              z-index: 10;
+
+              & .card__name {
+                font-size: var(--h2-font-size);
+                color: var(--white-color);
+                margin-bottom: .75rem;
+              }
+
+              & .card__description {
+                font-weight: 500;
+                margin-bottom: 1.75rem;
+                color: var(--white-color);
+                max-width: 200ch;
+                overflow: hidden;
+                text-overflow: ellipsis;
+                white-space: nowrap;
+              }
+
+              & .card__button {
+                display: flex;
+                justify-content: center;
+                flex-wrap: wrap;
+                width: 100%;
+
+                & a{
+                  display: inline-block;
+                  background-color: var(--first-color);
+                  padding: .75rem 2.1rem;
+                  border-radius: .25rem;
+                  color: var(--white-color);
+                  font-weight: 600;
+                  margin-left: 5px;
+                  position: relative;
+                  z-index: 1;
+                  border: 1px solid #ddd;
+                  border-radius: 10px;
+
+                  &::before{
+                    content: "";
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    width: 0;
+                    height: 100%;
+                    background: #00abf0;
+                    border-radius: 10px;
+                    z-index: -1;
+                    -webkit-transition: 0.5s;
+                    -o-transition: 0.5s;
+                    -moz-transition: 0.5s;
+                    transition: 0.5s;
+                  }
+                  &:hover::before {
+                    width: 100%;
+                  }
+
+                }
+
+              }
+
+            }          
+
+          }
+
+        }
+
+      }
+
+      & .navigation-buttons{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 15px;
+      }
+
+    }
+
+  }
+
+}
+
+
+/* Swiper class */
+.swiper-button-prev:after,
+.swiper-button-next:after {
+  content: "";
+}
+
+.swiper-button-prev,
+.swiper-button-next {
+  width: initial;
+  height: initial;
+  font-size: 3rem;
+  color: var(--second-color);
+  display: none;
+}
+
+.swiper-button-prev {
+  left: 0;
+}
+
+.swiper-button-next {
+  right: 0;
+}
+
+.swiper-pagination-bullet {
+  background-color: hsl(212, 32%, 40%);
+  opacity: 1;
+}
+
+.swiper-pagination-bullet-active {
+  background-color: var(--second-color);
+}
+
+/*=============== BREAKPOINTS ===============*/
+/* For small devices */
+@media screen and (max-width: 320px) {
+  .card__data {
+    padding: 1rem;
+  }
+  .projecto{
+
+    & .header-projectos{
+  
+      & .title-projecto{
+        font-size: 19px;
+      }
+  
+    }
+  }
+}
+
+@media screen and (max-width: 400px) {
+  .projecto{
+
+    & .header-projectos{
+  
+      & .title-projecto{
+        font-size: 34px;
+      }
+  
+    }
+  }
+}
+
+/* For medium devices */
+@media screen and (min-width: 768px) {
+  .card__content {
+    margin-inline: 3rem;
+  }
+
+  .swiper-button-next,
+  .swiper-button-prev {
+    display: block;
+  }
+}
+
+/* For large devices */
+@media screen and (min-width: 1120px) {
+  .card__container {
+    max-width: 1120px;
+  }
+
+  .swiper-button-prev {
+    left: -1rem;
+  }
+  .swiper-button-next {
+    right: -1rem;
+  }
+}
+
+/* LIGTH */
+.projecto.active{
+
+  & .header-projectos{
+    border-left: 15px solid #00abf0;
+    border-bottom: 1px solid #00abf0;
+    border-right: 1px solid #00abf0;
+    box-shadow: 4px 4px 4px 4px #ddd;
+
+    & .title-projecto{
+      color: #00abf0;  
+    }
+
+    & .buttons-controls{
+
+      & .button-next{
+        
+        & path{
+          fill: #00abf0;
+        }
+      }
+      & .button-prev{
+
+        & path{
+          fill: #00abf0;
+        }
+      }
+    }
+  }
+  
+  & .container-box-cards {
+
+    & .card__container {
+
+      & .card__content {
+
+        & .swiper-wrapper{
+
+          & .card__article {
+            box-shadow: 4px 4px 3px 4px #ddd;
+          
+            & .card__image {
+              background-color: var(--white-color);
+              
+              
+              & .card__shadow {
+                background-color: var(--white-color);
+              }
+
+            }
+            
+            & .card__data {
+              background-color: var(--white-color);
+              
+              & .card__name {
+                color: var(--first-color);
+              }
+
+              & .card__description {
+                color: var(--first-color);
+              }
+
+              & .card__button {
+
+                & a{
+                  background-color: var(--white-color);
+                  color: var(--first-color);
+                  border: 1px solid #00abf0;
+
+                }
+
+              }
+
+            }          
+
+          }
+
+        }
+
+      }
+
+    }
+
+  }
+
+}
