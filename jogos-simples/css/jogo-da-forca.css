@@ -1,0 +1,244 @@
+
+*{
+    padding: 0;
+    margin: 0;
+    font-family: monospace;
+    box-sizing: border-box;
+}
+body{
+    background-color: rgba(0, 0, 0, 0.1);
+}
+/*MODAL*/
+.modal{
+    position: absolute;
+    top: 0;
+    height: 100vh;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.4);
+    z-index: 9999;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.modal-son{
+    position: absolute;
+    background-color: transparent;
+    width: 80px;
+    height: 80px;
+    border-radius: 20px;
+    /*box-shadow: 5px 5px 5px 5px rgba(0, 0, 0, 0.2);*/
+}
+.modal-son img{
+    width: 100%;
+    height: 100%;
+    border-radius: 20px;
+}
+
+/*CONTAINER*/
+.container{
+    width: 100%;
+    height: 100vh;
+    /*
+    display: flex;
+    justify-content: space-around;
+    align-items: center;*/
+    position: relative;
+    overflow: hidden;
+}
+.container .container-jogo{
+    border: 1px solid #fff;
+    width: 300px;
+    height: auto;
+    background-color: #fff;
+    box-shadow: 4px 4px 4px 4px rgba(0, 0, 0, 0.1);
+    position: absolute;
+    top: 100px;
+    left: 100px;
+    transition: all .2s ease;
+}
+.container .container-jogo .jogo-header{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.container .container-jogo .jogo-header p{
+    border-bottom: 1px solid #999;
+    width: 130px;
+    text-align: center;
+    font-size: 11px;
+    color: #333;
+    padding: 5px 0px;
+}
+.container .container-jogo .jogo-quiz{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+    margin: 3px 0px;
+}
+.container .container-jogo .jogo-quiz .quiz{
+    width: 200px;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+.container .container-jogo .jogo-quiz .quiz input[type="text"]{
+    width: 50px;
+    height: 50px;
+    margin: 10px 5px;
+    border: none;
+    outline: none;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.6);
+    text-transform: uppercase;
+    font-size: 22px;
+    text-align: center;
+}
+#palavraChave{
+    display: block;
+    width: 50px;
+    height: 50px;
+    margin: 20px 0px 20px 130px;
+    border: 1px solid rgba(0, 0, 0, 0.6);
+    text-transform: uppercase;
+    display: none;
+    font-size: 22px;
+    text-align: center;
+}
+.container .container-jogo .jogo-controle{
+    margin: 20px 0px 20px 70px;
+    padding: 10px;
+    display: none;
+}
+.container .container-jogo .jogo-controle button{
+    font-size: 16px;
+    padding: 10px;
+}
+.container .container-jogo .jogo-controle #checarJogo{
+    color: #fff;
+    background-color: #00f;
+}
+.container .container-jogo .jogo-controle #checarJogo:hover{
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    border-radius: 5px;
+    font-weight: bold;
+    cursor: pointer;
+}
+.container .container-jogo .jogo-controle #dicaJogo{
+    color: #333;
+    background-color: #fff;
+}
+.container .container-jogo .jogo-controle #dicaJogo:hover{
+    border: 1px solid rgba(0, 0, 0, 0.4);
+    border-radius: 5px;
+    font-weight: bold;
+    cursor: pointer;
+}
+.container .container-jogo #novoJogo{
+    border: none;
+    margin: 20px 0px 20px 100px;
+    padding: 10px;
+    font-size: 16px;
+    color: #fff;
+    background-color: #00f;
+}
+.container .container-jogo #novoJogo:hover{
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    border-radius: 5px;
+    font-weight: bold;
+    cursor: pointer;
+}
+/*CONTAINER: ADMIN*/
+.container .container-admin{
+    border: 1px solid #fff;
+    width: 300px;
+    height: 550px;
+    background-color: #fff;
+    box-shadow: 4px 4px 4px 4px rgba(0, 0, 0, 0.1);
+    float: right;
+    position: relative;
+    top: 80px;
+    right: 10px;
+}
+.container .container-admin .alarme-jogo{
+    width: 100%;
+    height: 100px;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.container .container-admin .alarme-jogo #cronometro{
+    color: #333;
+    font-size: 36px;
+    font-weight: bolder;
+}
+/*Pesoa JOGO*/
+.container .container-admin .corpo-jogo{
+    width: 100%;
+    height: auto;
+    margin-top: 60px;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+    display: none;
+}
+/*Cabeca*/
+.container .container-admin .pessoa-cabeca-jogo{
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+.container .container-admin .pessoa-cabeca-jogo .cabeca{
+    width: 80px;
+    height: 70px;
+    border: 1px solid rgba(0, 0, 0, 0.6);
+    border-radius: 50%;
+}
+/*Troco*/
+.container .container-admin .pessoa-troco-braco-jogo{
+    display: flex;
+    justify-content: center;
+}
+.container .container-admin .pessoa-troco-braco-jogo .troco{
+    height: 100px;
+    border: 1px solid rgba(0, 0, 0, 0.6);
+    display: none;
+}
+/*Bracos*/
+.container .container-admin .pessoa-troco-braco-jogo .braco-direito{
+    height: 50px;
+    border: 1px solid rgba(0, 0, 0, 0.6);
+    transform: rotate(45deg);
+    margin-right: 15px;
+    display: none;
+}
+.container .container-admin .pessoa-troco-braco-jogo .braco-esquerdo{
+    height: 50px;
+    border: 1px solid rgba(0, 0, 0, 0.6);
+    transform: rotate(-45deg);
+    margin-left: 15px;
+    display: none;
+}
+
+/*Perna*/
+.container .container-admin .pessoa-perna-jogo{
+    display: flex;
+    justify-content: center;
+}
+.container .container-admin .pessoa-perna-jogo .perna-direito{
+    height: 70px;
+    border: 1px solid rgba(0, 0, 0, 0.6);
+    transform: rotate(25deg);
+    margin-right: 30px;/*30px quando ta sozinho*/
+    display: none;
+}
+.container .container-admin .pessoa-perna-jogo .perna-esquerdo{
+    height: 70px;
+    border: 1px solid rgba(0, 0, 0, 0.6);
+    transform: rotate(-25deg);
+    margin-left: 5px;
+    display: none;
+}
+@media(max-width:420px){
+    .container .container-admin{
+        display: none;
+    }
+}

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" type="text/css" href="css/jogo-da-forca.css">
+    <script type="text/javascript" src="script/jogo-da-forca.js"></script>
+</head>
+<body>
+    <div class="container">
+        
+        <div class="container-jogo">
+            <div class="jogo-header">
+                <p>Qual e a palavra?</p>
+            </div>
+            <div class="jogo-quiz">
+                <!--Input-->    
+            </div>
+            <input type="text" id="palavraChave" maxlength="1"/>
+
+            <div class="jogo-controle">
+                <button id="checarJogo">Checar</button>
+                <button id="dicaJogo">Dica</button>
+            </div>
+            
+            <button id="novoJogo">Novo Jogo</button>
+        </div>
+
+        <div class="container-admin">
+            <div class="alarme-jogo">
+                <p id="cronometro">01:00</p>
+            </div>
+            <div class="corpo-jogo">
+
+                <div class="pessoa-cabeca-jogo">
+                    <div class="cabeca"></div>
+                </div>
+                <div class="pessoa-troco-braco-jogo">
+                    <div class="braco-direito"></div>
+                    <div class="troco"></div>
+                    <div class="braco-esquerdo"></div>
+                </div>
+                <div class="pessoa-perna-jogo">
+                    <div class="perna-direito"></div>
+                    <div class="perna-esquerdo"></div>
+                </div>
+
+            </div>
+            
+        </div>
+
+    </div>
+
+</body>
+</html>
